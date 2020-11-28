@@ -6,7 +6,12 @@ export class ConfigValidator implements IConfigValidator {
   }
 
   private validateStarboundLogFilePath(): Promise<void> {
-    return (process.env.starbound_log_file_path) ? Promise.resolve() : 
-      Promise.reject(new Error("starbound_log_file_path has not been set in the config.json file!"))
+    return process.env.starbound_log_file_path
+      ? Promise.resolve()
+      : Promise.reject(
+          new Error(
+            "starbound_log_file_path has not been set in the config.json file!"
+          )
+        )
   }
 }

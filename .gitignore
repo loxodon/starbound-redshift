@@ -1,2 +1,5 @@
+[bB]in
+[dD]ist
 node_modules
 .env
+.nyc_output

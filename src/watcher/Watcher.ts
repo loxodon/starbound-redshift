@@ -1,13 +1,13 @@
-import { IWatcher } from "./Watcher.interface";
+import { IWatcher } from "./Watcher.interface"
 
 import { Tail } from "tail"
 
 export class Watcher implements IWatcher {
   watcher: Tail
-  
+
   constructor(filename: string) {
     this.watcher = new Tail(filename, {
-      useWatchFile: true
+      useWatchFile: true,
     })
   }
 
