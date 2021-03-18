@@ -13,7 +13,7 @@ Users can run this as background service while playing Starbound. It will watch 
 * Leave the process running in the terminal and while playing Starbound.
 
 ## How it works
-When a Redshift Event is logged to the Starbound.log file, then it is detected and handled by this service. This service expects events to have the following format:
+When a Redshift Event is logged to the Starbound.log file, then it is detected and handled by this service. This service expects an event to follow the below format:
 
 REDSHIFT_EVENT::<event_name>::<event_args>
 
