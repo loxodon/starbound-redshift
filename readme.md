@@ -4,7 +4,7 @@ Users can run this as background service while playing Starbound. It will watch 
 ![CI](https://github.com/loxodon/starbound-redshift/actions/workflows/ci.yml/badge.svg)
 
 ## Prerequisites
-* Install NPM
+* Install Yarn
 
 ## Quick Start
 * Clone this repo.
