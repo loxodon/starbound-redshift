@@ -1,5 +1,5 @@
 ## Starbound - Redshift
-Users can run this as background service while playing Starbound. It will watch the 'starbound.log' file for special REDSHIFT_EVENT type events to be outputted, and it will attempt to handle every event it hears by making a POST request to an API defined in the .env file. You can basically use in-game Starbound actions to do things in real-life. You could probably change the vibration modes and speeds of something something.
+Users can run this as background service while playing Starbound. It will watch the 'starbound.log' file for special REDSHIFT_EVENT type events to be outputted, and it will attempt to handle every event it hears by making a POST request to an API defined in the .env file. You can basically use in-game Starbound actions to do things outside of the game.
 
 ## Prerequisites
 * Install NPM
