@@ -2,24 +2,27 @@ require("dotenv").config()
 import { ConfigValidatorFactory } from "./config-validator/ConfigValidator.factory"
 import { WatcherFactory } from "./watcher/Watcher.factory"
 import { EventHandlerFactory } from "./event-handler/EventHandler.factory"
+import { LoggingService } from "./logging/LoggingService"
+
+const log = new LoggingService(process.env.log_level)
 
 ConfigValidatorFactory.make()
   .validate()
   .then(() => {
-    console.log("watching..")
+    log.info("watching..")
 
     WatcherFactory.make().on("line", function (data: string) {
-      let metadata = data.match(/\[.*]\s(SXB_EVENT.*)::(.*)::(.*)/)
+      let metadata = data.match(/\[.*]\s(REDSHIFT_EVENT.*)::(.*)::(.*)/)
       if (metadata == null) return
 
-      console.log("EVENT : " + metadata[2] + " => " + metadata[3])
+      log.debug("EVENT : " + metadata[2] + " => " + metadata[3])
 
       let eventHandler = EventHandlerFactory.make()
       eventHandler.handleEvent(metadata[2], metadata[3]).catch((reason) => {
-        console.error(reason)
+        log.error(reason.code)
       })
     })
   })
   .catch((reason: Error) => {
-    console.error(reason.message)
+    log.error(reason.message)
   })
