@@ -11,7 +11,7 @@ Users can run this as background service while playing Starbound. It will watch 
 * Leave the process running in the terminal and while playing Starbound.
 
 ## How it works
-REDSHIFT_EVENT events are forwarded to an API endpoint that you specify. They are sent via a POST request to <API_URL>/record as a request body with a schema like the following:
+REDSHIFT_EVENT events are forwarded to an API endpoint that you specify - along with an API key as X-API-KEY header request. They are sent via a POST request to <API_URL>/record as a request body with a schema like the following:
 
 ```JSON
 {
