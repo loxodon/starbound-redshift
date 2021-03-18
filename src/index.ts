@@ -18,7 +18,10 @@ ConfigValidatorFactory.make()
       log.debug("EVENT : " + metadata[2] + " => " + metadata[3])
 
       let eventHandler = EventHandlerFactory.make()
-      eventHandler.handleEvent(metadata[2], metadata[3]).catch((reason) => {
+      eventHandler.handleEvent(metadata[2], metadata[3])
+      .then((response) => {
+        log.debug("API Responded with Status Code: " + JSON.stringify(response.status))
+      }).catch((reason) => {
         log.error(reason)
       })
     })
