@@ -26,8 +26,6 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "buttplug": "^0.13.2",
-    "buttplug-node-bluetoothle-manager": "^0.12.2",
     "dotenv": "^8.2.0",
     "opn": "^6.0.0",
     "tail": "^2.0.4"
