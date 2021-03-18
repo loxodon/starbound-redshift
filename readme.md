@@ -32,8 +32,7 @@ REDSHIFT_EVENT events are forwarded to an API endpoint that you specify - along 
         "name" : "test_subject",
         "uniqueId" : "abcd1234.."
       }
-    ],
-    "position_name" : "missionary"
+    ]
   }
 }
 ```
