@@ -8,25 +8,23 @@ export class LoggingService implements ILoggingService {
     this.logger = winston.createLogger({
       level: level,
       format: winston.format.json(),
-      transports: [
-        new winston.transports.Console()
-      ]
+      transports: [new winston.transports.Console()],
     })
   }
 
   public debug(message: string): void {
-    this.logger.log('debug', message)
+    this.logger.log("debug", message)
   }
 
   public error(message: string): void {
-    this.logger.log('error', message)
+    this.logger.log("error", message)
   }
 
   public info(message: string): void {
-    this.logger.log('info', message)
+    this.logger.log("info", message)
   }
 
   public warn(message: string): void {
-    this.logger.log('warn', message)
+    this.logger.log("warn", message)
   }
 }
