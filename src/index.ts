@@ -19,7 +19,7 @@ ConfigValidatorFactory.make()
 
       let eventHandler = EventHandlerFactory.make()
       eventHandler.handleEvent(metadata[2], metadata[3]).catch((reason) => {
-        log.error(reason.code)
+        log.error(reason)
       })
     })
   })
