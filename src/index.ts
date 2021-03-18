@@ -1,33 +1,7 @@
 require("dotenv").config()
-let ButtplugBLEManager = require("buttplug-node-bluetoothle-manager")
 import { ConfigValidatorFactory } from "./config-validator/ConfigValidator.factory"
 import { WatcherFactory } from "./watcher/Watcher.factory"
 import { EventHandlerFactory } from "./event-handler/EventHandler.factory"
-import {
-  ButtplugClient,
-  ButtplugEmbeddedClientConnector,
-  ButtplugServer,
-  TestDeviceImpl,
-  TestDeviceSubtypeManager,
-} from "buttplug"
-
-;(async function () {
-  let bpClient = new ButtplugClient("Generic Buttplug Client")
-  let connector = new ButtplugEmbeddedClientConnector()
-  connector.Server = new ButtplugServer()
-  connector.Server.AddDeviceManager(new TestDeviceSubtypeManager())
-
-  let bpDevice = []
-  await bpClient.Connect(connector)
-
-  bpClient.addListener("deviceadded", async (device) => {
-    bpDevice.push(device)
-    await bpClient.Devices[0].SendVibrateCmd(1.0)
-  })
-
-  await bpClient.StartScanning()
-  await bpClient.StopScanning()
-})()
 
 ConfigValidatorFactory.make()
   .validate()
