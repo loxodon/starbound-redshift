@@ -9,7 +9,9 @@ Users can run this as background service while playing Starbound. It will watch 
 ## Quick Start
 * Clone this repo.
 * Rename '.env.example' to be '.env' and customize it with your own settings.
-* Run ```yarn install && yarn build && yarn start```within the cloned directory in terminal.
+* Run command: ```yarn install```
+* Run command: ```yarn build```
+* Run command: ```yarn start```
 * Leave the process running in the terminal and while playing Starbound.
 
 ## How it works
