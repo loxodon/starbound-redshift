@@ -12,7 +12,10 @@ ConfigValidatorFactory.make()
     log.info("watching..")
 
     WatcherFactory.make().on("line", function (data: string) {
-      let metadata = data.match(/\[.*]\s(REDSHIFT_EVENT.*)::(.*)::(.*)/)
+      let regexStatement = new RegExp(
+        `\\[.*]\\s(${process.env.events_prefix}.*)::(.*)::(.*)`
+      )
+      let metadata = data.match(regexStatement)
       if (metadata == null) return
 
       log.debug("EVENT : " + metadata[2] + " => " + metadata[3])
