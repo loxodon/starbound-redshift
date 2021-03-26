@@ -40,3 +40,8 @@ REDSHIFT_EVENT events are forwarded to an API endpoint that you specify - along 
   }
 }
 ```
+
+## Use Cases
+1. A Player interacts with a button in-game which toggles off a light in real-life.
+2. A Player collects an item or achievement and the server op wants to keep a record in a separate database.
+3. A Player uses a custom UI to send recorded redshift events to intermediary AWS Lambda API.
