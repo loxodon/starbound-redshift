@@ -12,7 +12,7 @@ export class EventHandler implements IEventHandler {
 
   public handleEvent(eventName: string, eventArgs: any): Promise<any> {
     return this.httpRequestService.post(
-      `${process.env.api_url}/record`,
+      `${process.env.api_url}/${process.env.api_default_endpoint}`,
       this.buildRequestData(eventName, eventArgs),
       this.buildRequestConfig()
     )
