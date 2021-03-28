@@ -9,7 +9,7 @@ export class EventHandler implements IEventHandler {
   }
 
   public handleEvent(eventName: string, eventArgs: any): Promise<any> {
-    let endpoint = process.env.api_default_endpoint
+    let endpoint = process.env.api_default_endpoint || ""
     endpoint = endpoint.replace("{event_name}", eventName)
     endpoint = endpoint.replace("{api_key}", process.env.api_key)
     return this.httpRequestService.post(
