@@ -9,11 +9,11 @@ export class EventHandler implements IEventHandler {
   }
 
   public handleEvent(eventName: string, eventArgs: any): Promise<any> {
-    let endpoint = process.env.api_default_endpoint || ""
+    let endpoint = process.env.API_DEFAULT_ENDPOINT || ""
     endpoint = endpoint.replace("{event_name}", eventName)
-    endpoint = endpoint.replace("{api_key}", process.env.api_key)
+    endpoint = endpoint.replace("{api_key}", process.env.API_KEY)
     return this.httpRequestService.post(
-      `${process.env.api_url}/${endpoint}`,
+      `${process.env.API_URL}/${endpoint}`,
       this.buildRequestData(eventName, eventArgs),
       this.buildRequestConfig()
     )
@@ -24,6 +24,6 @@ export class EventHandler implements IEventHandler {
   }
 
   private buildRequestConfig() {
-    return { headers: { "X-API-KEY": process.env.api_key } }
+    return { headers: { "X-API-KEY": process.env.API_KEY } }
   }
 }

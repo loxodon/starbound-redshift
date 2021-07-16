@@ -4,7 +4,7 @@ import { WatcherFactory } from "./watcher/Watcher.factory"
 import { EventHandlerFactory } from "./event-handler/EventHandler.factory"
 import { LoggingService } from "./logging/LoggingService"
 
-const log = new LoggingService(process.env.log_level)
+const log = new LoggingService(process.env.LOG_LEVEL)
 
 ConfigValidatorFactory.make()
   .validate()
@@ -13,7 +13,7 @@ ConfigValidatorFactory.make()
 
     WatcherFactory.make().on("line", function (data: string) {
       let regexStatement = new RegExp(
-        `\\[.*]\\s(${process.env.events_prefix}.*)::(.*)::(.*)`
+        `\\[.*]\\s(${process.env.EVENTS_PREFIX}.*)::(.*)::(.*)`
       )
       let metadata = data.match(regexStatement)
       if (metadata == null) return
