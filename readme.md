@@ -46,7 +46,6 @@ REDSHIFT_EVENT events are forwarded to an API endpoint that you specify - along 
 
 
 ### IFTTT Webhook Compatible
-
 Please rename the .env.ifttt file to .env to get started. Replace the Webhook Key with your webhook key from IFTTT.
 
 
@@ -57,5 +56,4 @@ Please rename the .env.ifttt file to .env to get started. Replace the Webhook Ke
 4. A Player uses a custom UI to update their status on Twitter.
 
 ## License
-
 Distributed under the MIT License. See `LICENSE` for more information.
